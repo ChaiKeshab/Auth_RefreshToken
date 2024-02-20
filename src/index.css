@@ -12,9 +12,10 @@ body {
   max-width: 1920px;
 }
 
+/* 
 div {
   user-select: none;
-}
+} */
 
 #root {
   min-height: 100vh;

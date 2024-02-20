@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Formik, Form, FormikHelpers } from 'formik'
 import { signUpValidationSchema } from '../ValidationSchema'
-import NoAccount from '../NoAccount'
 
 import {
     Button,
@@ -42,6 +41,7 @@ const Register = () => {
 
 
     const onFormSubmit = async (values: RegisterTypes, { resetForm }: FormikHelpers<RegisterTypes>) => {
+        console.log(values)
         resetForm();
     };
 
@@ -129,12 +129,6 @@ const Register = () => {
                     </Formik>
 
                 </div>
-
-                <NoAccount
-                    account={`Already have an account?`}
-                    label={'Sign in'}
-                    navLink={"login"}
-                />
 
             </div>
 

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Formik, Form, FormikHelpers } from 'formik'
 import { logInValidationSchema } from '../ValidationSchema'
-import NoAccount from '../NoAccount'
 import { Link, useNavigate } from 'react-router-dom'
 
 
@@ -31,7 +30,7 @@ const Login = () => {
 
 
     const onFormSubmit = (val: LoginValues, actions: FormikHelpers<LoginValues>) => {
-
+        console.log(val)
         actions.resetForm()
     }
 
@@ -101,11 +100,6 @@ const Login = () => {
 
                 </div>
 
-                <NoAccount
-                    label={'Register'}
-                    account={`Don't have an account?`}
-                    navLink={"register"}
-                />
 
             </div>
 
