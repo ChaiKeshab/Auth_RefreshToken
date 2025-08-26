@@ -1,27 +1,18 @@
 import { FC, ButtonHTMLAttributes } from 'react';
 
-interface ButtonProps {
-    label?: string;
-}
 
-const Button: FC<ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>> = ({
-    label,
-    onClick,
+const Button: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
     disabled = false,
-    type = 'button',
     className,
-    children
+    children,
+    ...rest
 }) => {
-
-
     return (
         <button
             disabled={disabled}
-            type={type}
             className={`${className} ${!disabled && 'cursor-pointer'} transition-all duration-150 disabled:bg-secondary disabled:text-primary`}
-            onClick={onClick}
+            {...rest}
         >
-            {label && <span>{label}</span>}
             {children}
         </button>
     );
